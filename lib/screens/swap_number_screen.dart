@@ -30,6 +30,7 @@ class _SwapNumberScreenState extends State<SwapNumberScreen> {
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'First Number',
@@ -61,9 +62,10 @@ class _SwapNumberScreenState extends State<SwapNumberScreen> {
                     hintText: 'Enter your second number'),
               ),
               const SizedBox(
-                height: 18,
+                height: 30,
               ),
-              ElevatedButton(
+              Center(
+                child: ElevatedButton(
                   onPressed: () {
                     setState(() {
                       first = first! + second!;
@@ -71,19 +73,26 @@ class _SwapNumberScreenState extends State<SwapNumberScreen> {
                       first = first! - second!;
                     });
                   },
-                  child: const Text('Swap')),
-              const SizedBox(
-                height: 28,
+                  child: const Text('Swap'),
+                ),
               ),
-              const Text('Numbers After Swap',
-                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
+              const SizedBox(
+                height: 20,
+              ),
+              const Center(
+                child: Text('Numbers After Swap',
+                    style:
+                        TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
+              ),
               const SizedBox(
                 height: 10,
               ),
-              Text(
-                'First number: $first, Second number: $second ',
-                style: const TextStyle(
-                  fontSize: 15,
+              Center(
+                child: Text(
+                  'First number: $first, Second number: $second ',
+                  style: const TextStyle(
+                    fontSize: 15,
+                  ),
                 ),
               ),
             ],
